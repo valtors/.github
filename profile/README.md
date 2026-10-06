@@ -2,31 +2,31 @@
 
 # valtors
 
-open source developer tools for the MCP ecosystem
+local-first infrastructure for agents you can inspect, constrain, reproduce, and trust.
 
-nine tools. one philosophy: your data stays on your machine.
+modular tools. one trust model. no required cloud.
 
 [![GitHub Org](https://img.shields.io/badge/GitHub-Valtors-181717?style=flat&logo=github)](https://github.com/valtors)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![No Telemetry](https://img.shields.io/badge/Telemetry-Never-red.svg)](#)
+[![Local First](https://img.shields.io/badge/Architecture-local--first-0f766e.svg)](#principles)
 
 </div>
 
 ---
 
-## the tools
+## the platform
 
 | tool | what it does | lang | stars |
 |------|-------------|------|-------|
-| [relay](https://github.com/valtors/relay) | MCP server with 40 tools. memory, web fetch, search, file ops, screenshots, multi-agent coordination. one go binary. | Go | ![stars](https://img.shields.io/github/stars/valtors/relay?style=flat) |
-| [reflow](https://github.com/valtors/reflow) | SSR-safe responsive toolkit for TypeScript. breakpoints, container queries, fluid typography. one API across 8 frameworks. | TS | ![stars](https://img.shields.io/github/stars/valtors/reflow?style=flat) |
-| [observer](https://github.com/valtors/observer) | transparent MCP proxy for agent observability. logs every tool call, exposes trace history, reduces token overhead. | Go | ![stars](https://img.shields.io/github/stars/valtors/observer?style=flat) |
-| [forge](https://github.com/valtors/forge) | local-first agent runtime. one binary. memory, sandboxing, observation, security, package management. agents run on top. | Go | ![stars](https://img.shields.io/github/stars/valtors/forge?style=flat) |
+| [forge](https://github.com/valtors/forge) | **incubator** — local agent runtime and emerging umbrella for Valtors components. | Go | ![stars](https://img.shields.io/github/stars/valtors/forge?style=flat) |
+| [relay](https://github.com/valtors/relay) | **active** — local MCP data plane for files, images, PDFs, web, and workflows. Some tools make explicitly requested network/API calls. | Go | ![stars](https://img.shields.io/github/stars/valtors/relay?style=flat) |
+| [observer](https://github.com/valtors/observer) | **incubator** — local MCP tracing proxy and SQLite event store. | Go | ![stars](https://img.shields.io/github/stars/valtors/observer?style=flat) |
+| [cairn](https://github.com/valtors/cairn) | **incubator** — embedded temporal memory for local agents in one SQLite file. | Rust | ![stars](https://img.shields.io/github/stars/valtors/cairn?style=flat) |
+| [smith](https://github.com/valtors/smith) | **incubator** — MCP package resolution and composition; planned to become Forge supply-chain infrastructure. | Rust | ![stars](https://img.shields.io/github/stars/valtors/smith?style=flat) |
+| [vault](https://github.com/valtors/vault) | **experimental** — policy and audit utilities; not currently an OS isolation boundary. | Go | ![stars](https://img.shields.io/github/stars/valtors/vault?style=flat) |
+| [pulse](https://github.com/valtors/pulse) | **experimental** — local notification triage agent. | Go | ![stars](https://img.shields.io/github/stars/valtors/pulse?style=flat) |
+| [reflow](https://github.com/valtors/reflow) | **maintained separately** — SSR-safe responsive toolkit for multi-framework TypeScript design systems. | TS | ![stars](https://img.shields.io/github/stars/valtors/reflow?style=flat) |
 | [mcprobe](https://github.com/tamish560/mcprobe) | security scanner for MCP servers. detect injection patterns, find tool shadowing, baseline for drift. | Go | ![stars](https://img.shields.io/github/stars/tamish560/mcprobe?style=flat) |
-| [vault](https://github.com/valtors/vault) | run your agent. it can't destroy your machine. | Go | ![stars](https://img.shields.io/github/stars/valtors/vault?style=flat) |
-| [cairn](https://github.com/valtors/cairn) | agent wayfinding. temporal knowledge store in one sqlite file. no neo4j, no cloud, no lock-in. | Rust | ![stars](https://img.shields.io/github/stars/valtors/cairn?style=flat) |
-| [smith](https://github.com/valtors/smith) | npm for MCP. install, compose, secure, and manage MCP servers. one binary. | Rust | ![stars](https://img.shields.io/github/stars/valtors/smith?style=flat) |
-| [pulse](https://github.com/valtors/pulse) | connect everything. your ai does the rest. | Go | ![stars](https://img.shields.io/github/stars/valtors/pulse?style=flat) |
 
 ## packages
 
@@ -37,23 +37,15 @@ nine tools. one philosophy: your data stays on your machine.
 
 ## principles
 
-- **MIT licensed** - everything, always
-- **zero telemetry** - no analytics, no phone home, no tracking
+- **open source** - license terms are documented in each repository
+- **data minimization** - no telemetry by default; network behavior and optional providers are documented per tool
 - **boring tech** - go stdlib, sqlite, json. no frameworks you can't audit
 - **local-first** - your data stays on your machine
 - **human-in-the-loop** - agents assist, humans decide
 
-## stats
-
-- 1,036+ tests across all repos
-- 624+ commits
-- 8 contributors
-- 1,959 monthly npm downloads
-- all repos CI green
-
 ## contribute
 
-Every repo has ARCHITECTURE.md, CONTRIBUTING.md, and SECURITY.md. Pick a repo, read the architecture doc, open a PR.
+Start with the repository README and lifecycle status. Use Discussions for early ideas and Issues for reproducible bugs. Read the organization-wide contribution and security policies before opening a PR.
 
 ## license
 
